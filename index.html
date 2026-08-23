@@ -3,1033 +3,516 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Copper Hand Craft - Kerajinan handmade berkualitas">
+
 <title>Copper Hand Craft</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-:root{
-    --copper:#b87333;
-    --copper2:#d99a5b;
-    --dark:#17120f;
-    --cream:#fff8ef;
-    --white:#ffffff;
-    --gray:#777;
-    --shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--cream);
-    color:var(--dark);
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f1eb;
+    color: #2b211b;
 }
 
 /* HEADER */
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(10px);
-    box-shadow:0 2px 15px rgba(0,0,0,.06);
+header {
+    background: #7b3f22;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.nav{
-    max-width:1200px;
-    margin:auto;
-    padding:15px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
 }
 
-.logo{
-    font-size:22px;
-    font-weight:900;
-    color:var(--copper);
-    letter-spacing:1px;
-}
-
-.logo span{
-    display:block;
-    color:#222;
-    font-size:10px;
-    letter-spacing:3px;
-    margin-top:3px;
-}
-
-.cart-btn{
-    border:0;
-    background:var(--dark);
-    color:white;
-    padding:11px 16px;
-    border-radius:12px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.cart-btn:hover{
-    background:var(--copper);
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
 }
 
 /* HERO */
-.hero{
-    max-width:1200px;
-    margin:30px auto;
-    padding:70px 30px;
-    border-radius:25px;
-    background:
-        linear-gradient(120deg,rgba(0,0,0,.82),rgba(95,48,19,.65)),
-        url("https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
-    color:white;
+.hero {
+    padding: 70px 6%;
+    text-align: center;
+    background: linear-gradient(135deg, #c87535, #7b3f22);
+    color: white;
 }
 
-.hero h1{
-    font-size:clamp(35px,6vw,70px);
-    max-width:700px;
-    line-height:1;
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
 }
 
-.hero p{
-    margin-top:20px;
-    max-width:600px;
-    line-height:1.7;
-    color:#eee;
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
 }
 
-.hero button{
-    margin-top:25px;
-    padding:14px 22px;
-    border:0;
-    border-radius:12px;
-    background:var(--copper2);
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
+.hero button {
+    border: none;
+    background: white;
+    color: #7b3f22;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* CONTENT */
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
+/* PRODUK */
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: 40px auto;
 }
 
-.section-title{
-    margin:30px 0 18px;
+.title {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.section-title h2{
-    font-size:28px;
+.title h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
 }
 
-.section-title p{
-    color:var(--gray);
-    margin-top:6px;
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 800px;
+    margin: auto;
 }
 
-/* SEARCH */
-.search{
-    display:flex;
-    gap:10px;
-    margin:20px 0;
+.product {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,.12);
+    transition: .25s;
 }
 
-.search input{
-    width:100%;
-    padding:15px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    outline:none;
-    font-size:15px;
+.product:hover {
+    transform: translateY(-6px);
 }
 
-.search input:focus{
-    border-color:var(--copper);
+.product-img {
+    height: 230px;
+    background: #ead7c5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* CATEGORY */
-.categories{
-    display:flex;
-    gap:10px;
-    overflow:auto;
-    padding-bottom:8px;
+.product-img svg {
+    width: 170px;
+    height: 170px;
 }
 
-.category{
-    white-space:nowrap;
-    border:1px solid #ddd;
-    background:white;
-    padding:10px 15px;
-    border-radius:30px;
-    cursor:pointer;
+.product-info {
+    padding: 20px;
 }
 
-.category.active,
-.category:hover{
-    background:var(--copper);
-    color:white;
-    border-color:var(--copper);
+.product-info h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
 }
 
-/* PRODUCTS */
-.products{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+.price {
+    color: #a44f20;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-.card{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-    transition:.25s;
+.product button {
+    width: 100%;
+    border: none;
+    background: #7b3f22;
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.product button:hover {
+    background: #a95328;
 }
 
-.product-img{
-    width:100%;
-    aspect-ratio:1/1;
-    object-fit:cover;
-    cursor:pointer;
+/* TENTANG */
+.about {
+    background: white;
+    padding: 50px 8%;
+    margin-top: 50px;
+    text-align: center;
 }
 
-.card-body{
-    padding:16px;
-}
-
-.category-label{
-    color:var(--copper);
-    font-size:12px;
-    font-weight:bold;
-    text-transform:uppercase;
-}
-
-.card h3{
-    margin:7px 0;
-    font-size:17px;
-}
-
-.price{
-    font-weight:900;
-    font-size:18px;
-    color:var(--copper);
-}
-
-.card-actions{
-    display:flex;
-    gap:8px;
-    margin-top:13px;
-}
-
-.card-actions button{
-    flex:1;
-    padding:11px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.detail-btn{
-    border:1px solid #ddd;
-    background:white;
-}
-
-.add-btn{
-    border:0;
-    background:var(--dark);
-    color:white;
-}
-
-/* MODAL */
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:200;
-    background:rgba(0,0,0,.65);
-    padding:20px;
-    overflow:auto;
-}
-
-.modal.show{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.modal-box{
-    width:min(900px,100%);
-    background:white;
-    border-radius:22px;
-    overflow:hidden;
-    position:relative;
-}
-
-.close{
-    position:absolute;
-    right:15px;
-    top:15px;
-    width:40px;
-    height:40px;
-    border:0;
-    border-radius:50%;
-    background:white;
-    box-shadow:0 3px 10px #0002;
-    cursor:pointer;
-    font-size:20px;
-    z-index:2;
-}
-
-.detail{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-}
-
-.detail img{
-    width:100%;
-    height:100%;
-    min-height:400px;
-    object-fit:cover;
-}
-
-.detail-content{
-    padding:35px;
-}
-
-.detail-content h2{
-    font-size:30px;
-    margin:10px 0;
-}
-
-.detail-price{
-    font-size:25px;
-    font-weight:900;
-    color:var(--copper);
-    margin:15px 0;
-}
-
-.detail-description{
-    color:#666;
-    line-height:1.7;
-}
-
-.quantity{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin:25px 0;
-}
-
-.quantity button{
-    width:40px;
-    height:40px;
-    border:0;
-    border-radius:10px;
-    background:#eee;
-    cursor:pointer;
-    font-size:20px;
-}
-
-.quantity span{
-    font-weight:bold;
-    font-size:18px;
-}
-
-.primary{
-    width:100%;
-    padding:14px;
-    border:0;
-    border-radius:12px;
-    background:var(--copper);
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* CART */
-.cart-items{
-    padding:25px;
-}
-
-.cart-item{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:15px 0;
-    border-bottom:1px solid #eee;
-}
-
-.cart-item img{
-    width:75px;
-    height:75px;
-    object-fit:cover;
-    border-radius:12px;
-}
-
-.cart-info{
-    flex:1;
-}
-
-.cart-info h4{
-    margin-bottom:5px;
-}
-
-.cart-price{
-    color:var(--copper);
-    font-weight:bold;
-}
-
-.cart-quantity{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.cart-quantity button{
-    width:30px;
-    height:30px;
-    border:0;
-    border-radius:8px;
-    background:#eee;
-    cursor:pointer;
-}
-
-.remove{
-    border:0;
-    background:none;
-    color:#d33;
-    cursor:pointer;
-}
-
-.cart-total{
-    padding:20px 25px;
-    border-top:1px solid #eee;
-}
-
-.total-row{
-    display:flex;
-    justify-content:space-between;
-    font-size:20px;
-    font-weight:bold;
-    margin-bottom:15px;
-}
-
-.checkout-buttons{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
-
-.wa{
-    background:#25D366;
-}
-
-.email{
-    background:#444;
-}
-
-/* EMPTY */
-.empty{
-    text-align:center;
-    padding:50px;
-    color:#777;
+.about h2 {
+    margin-bottom: 15px;
 }
 
 /* FOOTER */
-footer{
-    margin-top:60px;
-    padding:40px 20px;
-    background:var(--dark);
-    color:white;
-    text-align:center;
+footer {
+    margin-top: 40px;
+    padding: 25px;
+    background: #2b211b;
+    color: white;
+    text-align: center;
 }
 
-footer h2{
-    color:var(--copper2);
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-footer p{
-    margin-top:10px;
-    color:#aaa;
+.modal-box {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 15px;
+    padding: 25px;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-    .products{
-        grid-template-columns:repeat(3,1fr);
-    }
+.modal-box h2 {
+    margin-bottom: 15px;
 }
 
-@media(max-width:650px){
-    .products{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
-    }
+.modal-box input,
+.modal-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
 
-    .card-body{
-        padding:12px;
-    }
+.modal-box textarea {
+    height: 100px;
+    resize: none;
+}
 
-    .card h3{
-        font-size:15px;
-    }
+.wa {
+    width: 100%;
+    padding: 13px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
 
-    .price{
-        font-size:16px;
-    }
-
-    .detail{
-        grid-template-columns:1fr;
-    }
-
-    .detail img{
-        min-height:280px;
-        max-height:350px;
-    }
-
-    .detail-content{
-        padding:25px;
-    }
-
-    .checkout-buttons{
-        grid-template-columns:1fr;
-    }
-
-    .hero{
-        margin:15px;
-        padding:50px 25px;
-    }
-
-    .nav{
-        padding:12px 15px;
-    }
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <div class="nav">
-        <div class="logo">
-            COPPER HAND CRAFT
-            <span>HANDMADE • UNIQUE • QUALITY</span>
-        </div>
 
-        <button class="cart-btn" onclick="openCart()">
-            🛒 Keranjang (<span id="cartCount">0</span>)
-        </button>
-    </div>
+<div class="logo">
+Copper Hand Craft
+</div>
+
+<nav>
+<a href="#produk">Produk</a>
+<a href="#tentang">Tentang</a>
+</nav>
+
 </header>
 
+
+<!-- HERO -->
 <section class="hero">
-    <h1>Crafted With Passion.</h1>
 
-    <p>
-        Temukan berbagai kerajinan handmade unik dari
-        Copper Hand Craft. Dibuat dengan penuh perhatian
-        untuk memberikan sesuatu yang berbeda.
-    </p>
+<h1>Copper Hand Craft</h1>
 
-    <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-        Lihat Produk
-    </button>
+<p>Kerajinan handmade dengan sentuhan unik dan kreatif.</p>
+
+<button onclick="document.getElementById('produk').scrollIntoView({behavior:'smooth'})">
+Lihat Produk
+</button>
+
 </section>
 
-<main class="container">
 
-    <div class="section-title">
-        <h2>Produk Kami</h2>
-        <p>Pilih produk favoritmu dan pesan langsung.</p>
-    </div>
+<!-- PRODUK -->
+<section class="container" id="produk">
 
-    <div class="search">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="🔎 Cari produk..."
-            oninput="renderProducts()"
-        >
-    </div>
+<div class="title">
 
-    <div class="categories" id="categories"></div>
+<h2>Produk Kami</h2>
 
-    <div class="products" id="products"></div>
+<p>Pilih produk yang kamu inginkan</p>
 
-</main>
+</div>
 
+
+<div class="products">
+
+
+<!-- WALL DEKOR -->
+<div class="product">
+
+<div class="product-img">
+
+<svg viewBox="0 0 200 200">
+
+<rect x="35" y="35"
+width="130"
+height="130"
+rx="12"
+fill="#c87535"/>
+
+<rect x="48" y="48"
+width="104"
+height="104"
+rx="8"
+fill="#ead7c5"/>
+
+<circle cx="100" cy="88"
+r="25"
+fill="#b87333"/>
+
+<path d="M60 135 L90 105 L110 125 L130 100 L150 135"
+fill="none"
+stroke="#7b3f22"
+stroke-width="8"/>
+
+</svg>
+
+</div>
+
+<div class="product-info">
+
+<h3>Wall Dekor</h3>
+
+<p class="price">-</p>
+
+<button onclick="pesan('Wall Dekor','-')">
+Pesan / Request
+</button>
+
+</div>
+
+</div>
+
+
+<!-- REQUEST HAND CRAFT -->
+<div class="product">
+
+<div class="product-img">
+
+<svg viewBox="0 0 200 200">
+
+<circle cx="100" cy="100"
+r="65"
+fill="none"
+stroke="#b87333"
+stroke-width="12"/>
+
+<path d="M65 100
+C65 70 85 55 100 55
+C115 55 135 70 135 100
+C135 130 115 145 100 145
+C85 145 65 130 65 100Z"
+fill="#c87535"/>
+
+<path d="M82 100 L100 82 L118 100 L100 118 Z"
+fill="#ead7c5"/>
+
+</svg>
+
+</div>
+
+<div class="product-info">
+
+<h3>Request Hand Craft</h3>
+
+<p class="price">-</p>
+
+<button onclick="pesan('Request Hand Craft','-')">
+Pesan / Request
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- TENTANG -->
+<section class="about" id="tentang">
+
+<h2>Tentang Copper Hand Craft</h2>
+
+<p>
+Copper Hand Craft menyediakan berbagai kerajinan handmade
+yang dibuat dengan kreativitas dan perhatian terhadap detail.
+</p>
+
+</section>
+
+
+<!-- FOOTER -->
 <footer>
-    <h2>COPPER HAND CRAFT</h2>
-    <p>Handmade with passion ❤️</p>
-    <p>© 2026 Copper Hand Craft</p>
+
+<p>© 2026 Copper Hand Craft</p>
+
+<p>Handmade • Creative • Unique</p>
+
 </footer>
 
-<!-- DETAIL MODAL -->
-<div class="modal" id="detailModal">
-    <div class="modal-box">
 
-        <button class="close" onclick="closeModal('detailModal')">
-            ×
-        </button>
+<!-- MODAL PESAN -->
+<div class="modal" id="modal">
 
-        <div class="detail">
+<div class="modal-box">
 
-            <img id="detailImage">
+<span class="close" onclick="tutupModal()">×</span>
 
-            <div class="detail-content">
+<h2>Request Produk</h2>
 
-                <div class="category-label" id="detailCategory"></div>
+<p id="produkDipilih"></p>
 
-                <h2 id="detailName"></h2>
+<input
+type="text"
+id="nama"
+placeholder="Nama kamu">
 
-                <div class="detail-price" id="detailPrice"></div>
+<input
+type="number"
+id="jumlah"
+placeholder="Jumlah">
 
-                <p class="detail-description" id="detailDescription"></p>
+<textarea
+id="catatan"
+placeholder="Jelaskan request atau desain yang kamu inginkan..."></textarea>
 
-                <div class="quantity">
-                    <button onclick="changeDetailQuantity(-1)">−</button>
+<button class="wa" onclick="kirimWA()">
+Kirim ke WhatsApp
+</button>
 
-                    <span id="detailQuantity">1</span>
-
-                    <button onclick="changeDetailQuantity(1)">+</button>
-                </div>
-
-                <button class="primary" onclick="addDetailToCart()">
-                    🛒 Tambahkan ke Keranjang
-                </button>
-
-            </div>
-
-        </div>
-    </div>
 </div>
 
-<!-- CART MODAL -->
-<div class="modal" id="cartModal">
-
-    <div class="modal-box">
-
-        <button class="close" onclick="closeModal('cartModal')">
-            ×
-        </button>
-
-        <div class="cart-items">
-
-            <h2>🛒 Keranjang Belanja</h2>
-
-            <div id="cartList"></div>
-
-        </div>
-
-        <div class="cart-total">
-
-            <div class="total-row">
-                <span>Total</span>
-                <span id="cartTotal">Rp0</span>
-            </div>
-
-            <div class="checkout-buttons">
-
-                <button
-                    class="primary wa"
-                    onclick="checkoutWhatsApp()"
-                >
-                    💬 WhatsApp
-                </button>
-
-                <button
-                    class="primary email"
-                    onclick="checkoutEmail()"
-                >
-                    📧 Email
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
 </div>
+
 
 <script>
 
-/* =====================================================
-   PENGATURAN TOKO
-===================================================== */
+/* NOMOR WHATSAPP COPPER HAND CRAFT */
 
-/*
-   GANTI NOMOR INI DENGAN NOMOR WHATSAPP KAMU.
+const nomorWA = "6282136991994";
 
-   Format:
-   6282136991994
-
-   Jangan menggunakan:
-   +62
-   spasi
-   tanda -
-*/
-
-const STORE = {
-    name: "Copper Hand Craft",
-
-    whatsapp: "6282136991994",
-
-    email: "novalardiansyay@gmail.com"
-};
+let produk = "";
+let harga = "";
 
 
-/* =====================================================
-   DATA PRODUK
-===================================================== */
+/* MEMBUKA FORM */
 
-const products = [
+function pesan(namaProduk, hargaProduk) {
 
-    {
-        id:1,
-        name:"req Copper Handmade",
-        price:-,
-        category:"Aksesori",
-        image:"https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80",
-        description:"Gelang handmade dengan desain unik dan elegan. Cocok digunakan sehari-hari maupun sebagai hadiah."
-    },
+produk = namaProduk;
+harga = hargaProduk;
 
-    {
-        id:2,
-        name:"WALL DECOR",
-        price:-,
-        category:"Aksesori",
-        image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
-        description:"Kalung handmade dengan desain minimalis yang cocok untuk berbagai gaya."
-    },
+document.getElementById("produkDipilih").innerHTML =
+"<b>" + namaProduk + "</b><br>Harga: " + hargaProduk;
 
-    {
-        
-    
-
-];
-
-
-/* =====================================================
-   STATE
-===================================================== */
-
-let selectedCategory = "Semua";
-
-let cart = JSON.parse(localStorage.getItem("copperCart")) || [];
-
-let detailProduct = null;
-
-let detailQuantity = 1;
-
-
-/* =====================================================
-   FORMAT RUPIAH
-===================================================== */
-
-function rupiah(number){
-
-    return new Intl.NumberFormat("id-ID",{
-        style:"currency",
-        currency:"IDR",
-        maximumFractionDigits:0
-    }).format(number);
+document.getElementById("modal").style.display = "flex";
 
 }
 
 
-/* =====================================================
-   CATEGORY
-===================================================== */
+/* MENUTUP FORM */
 
-function renderCategories(){
+function tutupModal() {
 
-    const categories =
-        ["Semua", ...new Set(products.map(p => p.category))];
-
-    const container =
-        document.getElementById("categories");
-
-    container.innerHTML = "";
-
-    categories.forEach(category => {
-
-        const button =
-            document.createElement("button");
-
-        button.className =
-            "category " +
-            (selectedCategory === category ? "active" : "");
-
-        button.textContent = category;
-
-        button.onclick = () => {
-
-            selectedCategory = category;
-
-            renderCategories();
-
-            renderProducts();
-
-        };
-
-        container.appendChild(button);
-
-    });
+document.getElementById("modal").style.display = "none";
 
 }
 
 
-/* =====================================================
-   RENDER PRODUCTS
-===================================================== */
+/* KIRIM KE WHATSAPP */
 
-function renderProducts(){
+function kirimWA() {
 
-    const container =
-        document.getElementById("products");
+const nama =
+document.getElementById("nama").value.trim();
 
-    const search =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase();
+const jumlah =
+document.getElementById("jumlah").value.trim();
 
-    let filtered =
-        products.filter(product => {
+const catatan =
+document.getElementById("catatan").value.trim();
 
-            const matchCategory =
-                selectedCategory === "Semua" ||
-                product.category === selectedCategory;
 
-            const matchSearch =
-                product.name.toLowerCase().includes(search);
+if (nama === "" || jumlah === "") {
 
-            return matchCategory && matchSearch;
+alert("Silakan isi nama dan jumlah terlebih dahulu.");
 
-        });
-
-    container.innerHTML = "";
-
-    if(filtered.length === 0){
-
-        container.innerHTML = `
-            <div class="empty">
-                😕 Produk tidak ditemukan.
-            </div>
-        `;
-
-        return;
-
-    }
-
-    filtered.forEach(product => {
-
-        const card =
-            document.createElement("div");
-
-        card.className = "card";
-
-        card.innerHTML = `
-
-            <img
-                class="product-img"
-                src="${product.image}"
-                alt="${product.name}"
-                onclick="openDetail(${product.id})"
-            >
-
-            <div class="card-body">
-
-                <div class="category-label">
-                    ${product.category}
-                </div>
-
-                <h3>
-                    ${product.name}
-                </h3>
-
-                <div class="price">
-                    ${rupiah(product.price)}
-                </div>
-
-                <div class="card-actions">
-
-                    <button
-                        class="detail-btn"
-                        onclick="openDetail(${product.id})"
-                    >
-                        Detail
-                    </button>
-
-                    <button
-                        class="add-btn"
-                        onclick="addToCart(${product.id})"
-                    >
-                        + Keranjang
-                    </button>
-
-                </div>
-
-            </div>
-        `;
-
-        container.appendChild(card);
-
-    });
+return;
 
 }
 
 
-/* =====================================================
-   DETAIL
-===================================================== */
+const pesanWA =
+`Halo Copper Hand Craft! 👋
 
-function openDetail(id){
+Saya ingin memesan/request:
 
-    detailProduct =
-        products.find(p => p.id === id);
+Produk: ${produk}
+Harga: ${harga}
+Jumlah: ${jumlah}
 
-    detailQuantity = 1;
+Nama: ${nama}
 
-    document.getElementById("detailImage").src =
-        detailProduct.image;
+Request/Catatan:
+${catatan || "-"}
 
-    document.getElementById("detailCategory").textContent =
-        detailProduct.category;
+Terima kasih.`;
 
-    document.getElementById("detailName").textContent =
-        detailProduct.name;
 
-    document.getElementById("detailPrice").textContent =
-        rupiah(detailProduct.price);
-
-    document.getElementById("detailDescription").textContent =
-        detailProduct.description;
-
-    document.getElementById("detailQuantity").textContent =
-        detailQuantity;
-
-    document.getElementById("detailModal")
-        .classList.add("show");
+window.open(
+"https://wa.me/" + nomorWA + "?text=" +
+encodeURIComponent(pesanWA),
+"_blank"
+);
 
 }
 
+</script>
 
-function changeDetailQuantity(amount){
-
-    detailQuantity += amount;
-
-    if(detailQuantity < 1)
-        detailQuantity = 1;
-
-    document.getElementById("detailQuantity")
-        .textContent = detailQuantity;
-
-}
-
-
-function addDetailToCart(){
-
-    if(!detailProduct) return;
-
-    addToCart(
-        detailProduct.id,
-        detailQuantity
-    );
-
-    closeModal("detailModal");
-
-}
-
-
-/* =====================================================
-   CART
-===================================================== */
-
-function addToCart(id, quantity=1){
-
-    const existing =
-        cart.find(item => item.id === id);
-
-    if(existing){
-
-        existing.quantity += quantity;
-
-    }else{
-
-        cart.push({
-            id:id,
-            quantity:quantity
-        });
-
-    }
-
-    saveCart();
-
-    updateCartCount();
-
-}
-
-
-function saveCart(){
-
-    localStorage.setItem(
-        "copperCart",
-        JSON.stringify(cart)
-    );
-
-}
-
-
-function updateCartCount(){
-
-    const count =
-        cart.reduce(
-            (sum,item) => sum + item.quantity,
-            0
-        );
-
-    document.getElementById("cartCount")
-        .textContent = count;
-
-}
-
-
-/* =====================================================
-   OPEN CART
-===================================================== */
-
-function openCart(){
-
-    renderCart();
-
-    document.getElementById("cartModal")
-        .classList.add("show");
-
-}
-
-
-function renderCart(){
-
-    const list =
-        document.getElementById("cartList");
-
-    list.innerHTML = "";
-
-    if(cart.length === 0){
-
-        list.innerHTML = `
-            <div class="empty">
-                🛒 Keranjang masih kosong.
-            <
+</body>
+</html>
